@@ -1,0 +1,2 @@
+# mileage
+### a Sails application

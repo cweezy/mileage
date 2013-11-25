@@ -1,0 +1,11 @@
+<h1>Sign Up For Coach Chu's Mileage Logz</h1>
+
+<form action='/user/create' method='POST' class='form-signup'>
+	<input type='text' class='form-control' placeholder='Your Name' name='name' />
+	<input type='text' class='form-control' placeholder='Your Email' name='email' />
+	<input type='password' class='form-control' placeholder='Password' name='password' />
+	<input type='password' class='form-control' placeholder='Password Confirmation' name='password' />
+
+	<input type='submit' class='btn btn-lg btn-primary' value='Sign Up!' />
+	<input type='hidden' name='_csrf' value='<%= _csrf %>' />
+</form>
