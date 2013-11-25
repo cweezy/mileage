@@ -23,11 +23,27 @@ module.exports = {
 	},
 
 	create: function(req, res, next) {
-		User.create(req.params.all(), function (err, user) {
-			if (err) return next(err);
-      res.json(user)
+		user.create(req.params.all(), function (err, user) {
+			if (err) {
+        console.log(err);
+        req.session.flash = {
+          err: err
+        }
+        return res.redirect('/user/new');
+      }
+      res.redirect('/user/show' + user.id);
 		})
 	},
+
+  show: function(req, res, next) {
+    User.findOne(req.params['id'], function (err, user) {
+      if (err) return next(err);
+      if (!user) return next();
+      res.view({
+        user: user
+      })
+    });
+  },
 
   /**
    * Overrides for the settings in `config/controllers.js`

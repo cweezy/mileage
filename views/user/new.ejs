@@ -1,5 +1,13 @@
 <h1>Sign Up For Coach Chu's Mileage Logz</h1>
 
+<% if(flash && flash.err) { %>
+  <ul class='alert alert-warning'>
+    <% Object.keys(flash.err).forEach(function(e) { %>
+      <li><%= JSON.stringify(flash.err[e]) %></li>
+    <% }) %>
+  </ul>
+<% } %>
+
 <form action='/user/create' method='POST' class='form-signup'>
 	<input type='text' class='form-control' placeholder='Your Name' name='name' />
 	<input type='text' class='form-control' placeholder='Your Email' name='email' />
