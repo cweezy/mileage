@@ -23,7 +23,7 @@ module.exports = {
 	},
 
 	create: function(req, res, next) {
-		user.create(req.params.all(), function (err, user) {
+		User.create(req.params.all(), function (err, user) {
 			if (err) {
         console.log(err);
         req.session.flash = {
@@ -31,7 +31,11 @@ module.exports = {
         }
         return res.redirect('/user/new');
       }
-      res.redirect('/user/show' + user.id);
+       // Log user in
+      req.session.authenticated = true;
+      req.session.User = user;
+      
+      res.redirect('/user/show/' + user.id);
 		})
 	},
 
