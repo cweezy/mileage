@@ -72,7 +72,6 @@
         <% } %>
       </div>
     </div>
-    <%- body %>
 
     <!--
         Client-side Templates
@@ -123,11 +122,15 @@
     -->
 
     <!--SCRIPTS-->
-    <script src="/linker/js/socket.io.js"></script>
-    <script src="/linker/js/sails.io.js"></script>
+    <script src="/linker/js/libs/socket.io.js"></script>
+    <script src="/linker/js/libs/sails.io.js"></script>
     <script src="/linker/js/app.js"></script>
-    <script src="/linker/js/jquery-1.10.2.min.js"></script>
-    <script src="/linker/js/bootstrap.min.js"></script>
+    <script src="/linker/js/libs/jquery-1.10.2.min.js"></script>
+    <script src="/linker/js/libs/bootstrap.min.js"></script>
+    <script src="/linker/js/libs/handlebars-1.1.2.js"></script>
+    <script src="/linker/js/libs/ember-1.2.0.js"></script>
+    <script src="/linker/js/libs/ember-data.js"></script>
     <!--SCRIPTS END-->
+    <%- body %>
   </body>
 </html>

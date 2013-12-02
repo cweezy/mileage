@@ -23,14 +23,16 @@ module.exports = {
 	},
 
 	create: function(req, res, next) {
+
 		User.create(req.params.all(), function (err, user) {
 			if (err) {
-        console.log(err);
+        sails.log(err);
         req.session.flash = {
           err: err
         }
         return res.redirect('/user/new');
       }
+      sails.log('user created chris');
        // Log user in
       req.session.authenticated = true;
       req.session.User = user;

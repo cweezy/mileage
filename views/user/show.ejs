@@ -1,5 +1,26 @@
-<div class='container'>
-  <h1><%- user.name %></h1>
-  <h2><%- user.email %></h2>
+<script type="text/x-handlebars" data-template-name="user-mileage">
+  <section id='user-mileage-app'>
+    <header id='header'>
+      <h1>Mileage for <%- user.name %></h1>
+    </header>
+    <section id='main'>
+      <table class='table'>
+        <tr>
+          <td>
+            Monday
+          </td>
+          <td>
+            5.23
+          </td>
+          <td>
+            notes
+          </td>
+        </tr>
+      </table>
+    </section>
+  </section>
+</script>
 
-</div>
+<script src="/linker/js/user_mileage/user_mileage_app.js"></script>
+<script src="/linker/js/user_mileage/router.js"></script>
+<script src="/linker/js/user_mileage/models/run.js"></script>
